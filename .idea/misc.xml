@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/drawable/ic_menu_camera.xml" value="0.214" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/activity_login.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/activity_rutina.xml" value="0.1" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/app_bar_.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/app_bar_main.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/content_.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/content_main.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/fragment_administrar_anuncio.xml" value="0.12158054711246201" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/fragment_alumnos.xml" value="0.19202898550724637" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/fragment_anuncios.xml" value="0.136" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/fragment_asistencia.xml" value="0.18795289855072464" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/fragment_cambiar_password.xml" value="0.12158054711246201" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/fragment_categ_ejer_dias_tab.xml" value="0.20471014492753623" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/fragment_categoria_tab.xml" value="0.2056159420289855" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/fragment_detalle_alumno.xml" value="0.18795289855072464" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/fragment_detalle_anuncio.xml" value="0.2056159420289855" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/fragment_detalle_ejercicio.xml" value="0.2" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/fragment_detalle_ejercicio_rutina.xml" value="0.20471014492753623" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/fragment_detalle_plan.xml" value="0.18795289855072464" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/fragment_dias_tab.xml" value="0.20471014492753623" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/fragment_ejercicios.xml" value="0.2056159420289855" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/fragment_ejercicios_categoria_rutina.xml" value="0.2" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/fragment_home.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/fragment_logout.xml" value="0.12158054711246201" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/fragment_mi_rutina.xml" value="0.20471014492753623" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/fragment_nueva_rutina.xml" value="0.25" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/fragment_nueva_rutina_ejercicio.xml" value="0.264" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/fragment_nuevo_alumno.xml" value="0.18795289855072464" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/fragment_nuevo_anuncio.xml" value="0.19375" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/fragment_nuevo_ejercicio.xml" value="0.2359375" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/fragment_nuevo_plan.xml" value="0.18795289855072464" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/fragment_pago.xml" value="0.2056159420289855" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/fragment_perfil.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/fragment_plan_contratado.xml" value="0.12158054711246201" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/fragment_planes.xml" value="0.18795289855072464" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/fragment_profesores.xml" value="0.25" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/fragment_rutina.xml" value="0.20471014492753623" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/fragment_rutinas.xml" value="0.2056159420289855" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/fragment_slideshow.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/item_alumno.xml" value="0.19202898550724637" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/item_anuncio.xml" value="0.2056159420289855" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/item_asistencia.xml" value="0.20471014492753623" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/item_ejercicio.xml" value="0.2056159420289855" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/item_ejercicio_check.xml" value="0.20471014492753623" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/item_ejercicio_rutina.xml" value="0.176" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/item_plan.xml" value="0.18795289855072464" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/item_profesor.xml" value="0.24895833333333334" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/item_rutina.xml" value="0.25" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/nav_header_main.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/menu/activity_main_drawer.xml" value="0.25" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/menu/main.xml" value="0.3625" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

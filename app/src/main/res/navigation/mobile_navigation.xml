@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_anuncios">
+
+    <fragment
+        android:id="@+id/nav_anuncios"
+        android:name="com.efler.gymapp.ui.anuncios.AnunciosFragment"
+        android:label="Anuncios"
+        tools:layout="@layout/fragment_anuncios" >
+        <action
+            android:id="@+id/action_nav_anuncios_to_nav_detalleAnuncio"
+            app:destination="@id/nav_detalleAnuncio" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_perfil"
+        android:name="com.efler.gymapp.ui.perfil.PerfilFragment"
+        android:label="Perfil"
+        tools:layout="@layout/fragment_perfil" >
+        <action
+            android:id="@+id/action_nav_perfil_to_nav_cambiarPassword"
+            app:destination="@id/nav_cambiarPassword" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_ejercicios"
+        android:name="com.efler.gymapp.ui.ejercicios.EjerciciosFragment"
+        android:label="Ejercicios"
+        tools:layout="@layout/fragment_ejercicios" />
+    <fragment
+        android:id="@+id/nav_mirutina"
+        android:name="com.efler.gymapp.ui.mirutina.MiRutinaFragment"
+        android:label="Mi rutina"
+        tools:layout="@layout/fragment_mi_rutina" />
+    <fragment
+        android:id="@+id/nav_rutinas"
+        android:name="com.efler.gymapp.ui.rutinas.RutinasFragment"
+        android:label="Rutinas"
+        tools:layout="@layout/fragment_rutinas" />
+    <fragment
+        android:id="@+id/nav_profesores"
+        android:name="com.efler.gymapp.ui.profesores.ProfesoresFragment"
+        android:label="Profesores"
+        tools:layout="@layout/fragment_profesores" />
+    <fragment
+        android:id="@+id/nav_alumnos"
+        android:name="com.efler.gymapp.ui.alumnos.AlumnosFragment"
+        android:label="Alumnos"
+        tools:layout="@layout/fragment_alumnos" />
+    <fragment
+        android:id="@+id/nav_planes"
+        android:name="com.efler.gymapp.ui.planes.PlanesFragment"
+        android:label="Planes"
+        tools:layout="@layout/fragment_planes" />
+    <fragment
+        android:id="@+id/nav_pago"
+        android:name="com.efler.gymapp.ui.pago.PagoFragment"
+        android:label="Pagos"
+        tools:layout="@layout/fragment_pago" />
+    <fragment
+        android:id="@+id/nav_logout"
+        android:name="com.efler.gymapp.ui.logout.LogoutFragment"
+        android:label="Cerrar sesión"
+        tools:layout="@layout/fragment_logout" />
+    <fragment
+        android:id="@+id/nav_nuevoAnuncio"
+        android:name="com.efler.gymapp.ui.anuncios.NuevoAnuncioFragment"
+        android:label="Nuevo anuncio"
+        tools:layout="@layout/fragment_nuevo_anuncio" />
+    <fragment
+        android:id="@+id/nav_cambiarPassword"
+        android:name="com.efler.gymapp.ui.perfil.CambiarPasswordFragment"
+        android:label="Cambiar contraseña"
+        tools:layout="@layout/fragment_cambiar_password" />
+
+    <fragment
+        android:id="@+id/nav_asistencia"
+        android:name="com.efler.gymapp.ui.asistencia.AsistenciaFragment"
+        android:label="Asistencias"
+        tools:layout="@layout/fragment_asistencia" />
+    <fragment
+        android:id="@+id/nav_detalleAnuncio"
+        android:name="com.efler.gymapp.ui.anuncios.DetalleAnuncioFragment"
+        android:label="Anuncio"
+        tools:layout="@layout/fragment_detalle_anuncio" />
+    <fragment
+        android:id="@+id/nav_detalleEjercicio"
+        android:name="com.efler.gymapp.ui.ejercicios.DetalleEjercicioFragment"
+        android:label="Ejercicio"
+        tools:layout="@layout/fragment_detalle_ejercicio" />
+    <fragment
+        android:id="@+id/nav_nuevoEjercicio"
+        android:name="com.efler.gymapp.ui.ejercicios.NuevoEjercicioFragment"
+        android:label="Nuevo ejercicio"
+        tools:layout="@layout/fragment_nuevo_ejercicio" />
+    <fragment
+        android:id="@+id/nav_nuevoAlumno"
+        android:name="com.efler.gymapp.ui.alumnos.NuevoAlumnoFragment"
+        android:label="Nuevo alumno"
+        tools:layout="@layout/fragment_nuevo_alumno" />
+    <fragment
+        android:id="@+id/nav_detalleAlumno"
+        android:name="com.efler.gymapp.ui.alumnos.DetalleAlumnoFragment"
+        android:label="Alumno"
+        tools:layout="@layout/fragment_detalle_alumno" />
+    <fragment
+        android:id="@+id/nav_nuevoPlan"
+        android:name="com.efler.gymapp.ui.planes.NuevoPlanFragment"
+        android:label="Nuevo plan"
+        tools:layout="@layout/fragment_nuevo_plan" />
+    <fragment
+        android:id="@+id/nav_detallePlan"
+        android:name="com.efler.gymapp.ui.planes.DetallePlanFragment"
+        android:label="Plan"
+        tools:layout="@layout/fragment_detalle_plan" />
+    <fragment
+        android:id="@+id/nav_detalleEjercicioRutina"
+        android:name="com.efler.gymapp.ui.mirutina.DetalleEjercicioRutinaFragment"
+        android:label="Ejercicio"
+        tools:layout="@layout/fragment_detalle_ejercicio_rutina" />
+    <fragment
+        android:id="@+id/nav_nuevaRutina"
+        android:name="com.efler.gymapp.ui.rutinas.NuevaRutinaFragment"
+        android:label="Nueva rutina"
+        tools:layout="@layout/fragment_nueva_rutina" />
+    <fragment
+        android:id="@+id/nav_nuevaRutinaEjercicioFragment"
+        android:name="com.efler.gymapp.ui.rutinas.NuevaRutinaEjercicioFragment"
+        android:label="Nueva rutina"
+        tools:layout="@layout/fragment_nueva_rutina_ejercicio" />
+</navigation>

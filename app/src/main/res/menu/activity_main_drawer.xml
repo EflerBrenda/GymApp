@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_anuncios"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Anuncios" />
+        <item
+            android:id="@+id/nav_perfil"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Perfil" />
+        <item
+            android:id="@+id/nav_asistencia"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Asistencia" />
+        <item
+            android:id="@+id/nav_profesores"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Profesores" />
+        <item
+            android:id="@+id/nav_ejercicios"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Ejercicios" />
+        <item
+            android:id="@+id/nav_mirutina"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Mi rutina" />
+        <item
+            android:id="@+id/nav_rutinas"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Rutinas" />
+        <item
+            android:id="@+id/nav_alumnos"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Alumnos" />
+        <item
+            android:id="@+id/nav_planes"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Planes" />
+        <item
+            android:id="@+id/nav_pago"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Pago" />
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Cerrar sesión" />
+    </group>
+</menu>
