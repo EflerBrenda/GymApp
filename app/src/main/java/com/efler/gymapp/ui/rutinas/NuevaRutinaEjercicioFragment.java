@@ -12,9 +12,11 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -28,16 +30,22 @@ import com.efler.gymapp.ui.mirutina.MiRutinaViewModel;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class NuevaRutinaEjercicioFragment extends Fragment {
 
     private NuevaRutinaEjercicioViewModel viewModel;
     private View view;
-    private Spinner spDiasRutinaNuevaNueva;
+    private Spinner spDiasRutinaNuevaNueva,spCategoriaNuevaRutina;
     private TextView tvNombreRutina;
     private TabCategoriasAdapter cad;
-    private ViewPager2 vpCategoriaRutinaEjercicio;
+    //private ViewPager2 vpCategoriaRutinaEjercicio;
+    private ListView lvEjerciciosRutina;
+    private EjercicioCategoriaRutinaAdapter ead;
+    private List<Ejercicio> lista;
+    private List<Ejercicio> listaEjerciciosSeleccionados=new ArrayList<>();
+
 
 
     @Nullable
@@ -51,49 +59,51 @@ public class NuevaRutinaEjercicioFragment extends Fragment {
         viewModel.getMutableDia().observe(getViewLifecycleOwner(), new Observer<Integer>() {
             @Override
             public void onChanged(Integer dia) {
-                //viewModel.cargarSpinerCategoria(spCategoriaEjercicioRutina,view,dia);
             }
         });
-        viewModel.getMutableCategorias().observe(getViewLifecycleOwner(), new Observer<List<Categoria>>() {
+        viewModel.getMutableCategoria().observe(getViewLifecycleOwner(), new Observer<Categoria>() {
             @Override
-            public void onChanged(List<Categoria> categorias) {
-                cad = new TabCategoriasAdapter(getParentFragment(),categorias);
-                vpCategoriaRutinaEjercicio.setAdapter(cad);
-                TabLayout tabLayout = view.findViewById(R.id.tlCategoriaRutinaEjercicio);
-                tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
-                new TabLayoutMediator(tabLayout, vpCategoriaRutinaEjercicio,
-                        (tab, position) -> tab.setText(categorias.get(position).getDescripcion())
-                ).attach();
+            public void onChanged(Categoria categoria) {
+                viewModel.obtenerEjerciciosCategoria(categoria.getId());
             }
-
         });
-        /*viewModel.getMutableEjercicio().observe(getViewLifecycleOwner(), new Observer<List<Ejercicio>>() {
+        viewModel.getMutableEjercicio().observe(getViewLifecycleOwner(), new Observer<List<Ejercicio>>() {
             @Override
             public void onChanged(List<Ejercicio> ejercicios) {
-                listaEjercicios= ejercicios ;
-                GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 1, GridLayoutManager.VERTICAL, false);
-                rvRutinaEjercicio.setLayoutManager(gridLayoutManager);
-                ead = new EjercicioAdapter(listaEjercicios,getContext(),getLayoutInflater(),donde);
-                rvRutinaEjercicio.setAdapter(ead);
-            }
-        });*/
+                lista= ejercicios ;
+                ead = new EjercicioCategoriaRutinaAdapter(getContext(),R.layout.item_ejercicio_check,lista);
+                //listaEjerciciosSeleccionados= ead.ejerciciosCheck;
+                lvEjerciciosRutina.setAdapter(ead);
+                /*Log.d("size", ejercicios.size()+"");
+                if(ejercicios.size() !=0){
+                    for(int i=0; i<ejercicios.size();i++){
+                        if(ejercicios.get(i).getCheck()){
+                            listaEjerciciosSeleccionados.add(ejercicios.get(i));
+                        }
 
-        inicializarVista(view);
+                    }
+                }*/
+
+
+            }
+        });
+
+                inicializarVista(view);
         return view;
 }
 
     private void inicializarVista(View view){
         spDiasRutinaNuevaNueva= view.findViewById(R.id.spDiasRutinaNuevaNueva);
         tvNombreRutina= view.findViewById(R.id.tvNombreRutina);
-        vpCategoriaRutinaEjercicio= view.findViewById(R.id.vpCategoriaRutinaEjercicio);
+        spCategoriaNuevaRutina= view.findViewById(R.id.SpCategoriaNuevaRutina);
+        lvEjerciciosRutina= view.findViewById(R.id.lvEjerciciosRutina);
 
-        /*spCategoriaEjercicioRutina= view.findViewById(R.id.spCategoriaEjercicioRutina);
-        rvRutinaEjercicio= view.findViewById(R.id.rvRutinaEjercicio);
-        //spCategoriaEjercicioRutina.setEnabled(false);*/
         Bundle bundle= getArguments();
         Rutina rutina=(Rutina) bundle.getSerializable("rutina");
         tvNombreRutina.setText(rutina.getDescripcion());
         viewModel.cargaSpinerDias(spDiasRutinaNuevaNueva,view, rutina.getCant_dias());
-        viewModel.obtenerCategorias();
+        viewModel.cargarSpinerCategoria(spCategoriaNuevaRutina,view);
+
+
     }
 }

@@ -111,7 +111,7 @@ public class DetalleAnuncioFragment extends Fragment {
                         .setNegativeButton("Cancelar",new DialogInterface.OnClickListener(){
                             @Override
                             public void onClick(DialogInterface di,int i){
-                                Navigation.findNavController(view).navigate(R.id.nav_detalleAnuncio);
+                                Navigation.findNavController(view).navigate(R.id.nav_detalleAnuncio,bundle);
                             }
                         }).show();
             }

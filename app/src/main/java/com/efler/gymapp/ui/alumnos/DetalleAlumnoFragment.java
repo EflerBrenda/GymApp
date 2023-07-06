@@ -150,9 +150,15 @@ public class DetalleAlumnoFragment extends Fragment {
                         .setNegativeButton("Cancelar",new DialogInterface.OnClickListener(){
                             @Override
                             public void onClick(DialogInterface di,int i){
-                                Navigation.findNavController(view).navigate(R.id.nav_detalleAlumno);
+                                Navigation.findNavController(view).navigate(R.id.nav_detalleAlumno,bundle);
                             }
                         }).show();
+            }
+        });
+        fabRutinaAlumno.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.nav_asignarRutina,bundle);
             }
         });
     }

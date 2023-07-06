@@ -69,9 +69,9 @@ public class RutinasAdapter extends RecyclerView.Adapter<RutinasAdapter.ViewHold
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*Bundle bundle = new Bundle();
-                bundle.putSerializable("ejercicio", ejercicio );
-                Navigation.findNavController(view).navigate(R.id.nav_detalleEjercicio, bundle);*/
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("rutina", rutina );
+                Navigation.findNavController(view).navigate(R.id.nav_detalleRutina, bundle);
 
             }
         });

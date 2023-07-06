@@ -59,7 +59,10 @@ public class ProfesoresFragment extends Fragment implements SearchView.OnQueryTe
 
     @Override
     public boolean onQueryTextChange(String s) {
-        pad.filtrarProfesor(s);
+        if(s!= null){
+            if(pad != null)
+            {pad.filtrarProfesor(s);}
+        }
         return false;
     }
 

@@ -77,7 +77,9 @@ public class PlanesFragment extends Fragment implements SearchView.OnQueryTextLi
 
     @Override
     public boolean onQueryTextChange(String s) {
-        pad.buscar(s);
+        if(s!= null){
+            if(pad != null)
+            {pad.buscar(s);}}
         return false;
     }
 }

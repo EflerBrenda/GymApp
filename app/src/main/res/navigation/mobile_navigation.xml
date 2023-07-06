@@ -131,4 +131,14 @@
         android:name="com.efler.gymapp.ui.rutinas.NuevaRutinaEjercicioFragment"
         android:label="Nueva rutina"
         tools:layout="@layout/fragment_nueva_rutina_ejercicio" />
+    <fragment
+        android:id="@+id/nav_detalleRutina"
+        android:name="com.efler.gymapp.ui.rutinas.DetalleRutinaFragment"
+        android:label="Detalle rutina"
+        tools:layout="@layout/fragment_detalle_ejercicio_rutina" />
+    <fragment
+        android:id="@+id/nav_asignarRutina"
+        android:name="com.efler.gymapp.ui.alumnos.AsignarRutinaAlumnoFragment"
+        android:label="Detalle rutina"
+        tools:layout="@layout/fragment_asignar_rutina_alumno" />
 </navigation>

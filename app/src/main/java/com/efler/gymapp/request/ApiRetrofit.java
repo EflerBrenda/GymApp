@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 
 import com.efler.gymapp.modelo.*;
 
+import java.net.URI;
 import java.util.List;
 
 import retrofit2.Call;
@@ -65,11 +66,6 @@ public class ApiRetrofit {
         int rolid=sp.getInt("rolid",0);
         return rolid;
     }
-    public static int obtenerPlan(Context context){
-        SharedPreferences sp= context.getSharedPreferences("UsuarioActual",0);
-        int planid=sp.getInt("planid",0);
-        return planid;
-    }
 
     public interface ServiceGym {
 
@@ -105,8 +101,11 @@ public class ApiRetrofit {
         @GET("categorias/ObtenerCategorias")
         Call <List<Categoria>> obtenerCategorias (@Header("Authorization") String token);
 
-        @GET("Ejercicios/EjerciciosPorCategorias/{id}")
-        Call <List<Ejercicio>> EjerciciosPorCategorias (@Header("Authorization") String token,@Path("id") int id);
+        @GET("Ejercicios/EjerciciosPorCategorias/{iddd}")
+        Call <List<Ejercicio>> EjerciciosPorCategorias (@Header("Authorization") String token,@Path("iddd") int id);
+
+        @GET("Ejercicios/EjerciciosRutinaPorCategorias/{idCategoria}")
+        Call <List<Ejercicio_Rutina>> EjerciciosRutinaPorCategorias (@Header("Authorization") String token,@Path("idCategoria") int id);
 
         @POST("Ejercicios/NuevoEjercicio")
         Call<Ejercicio> nuevoEjercicio (@Header("Authorization") String token,@Body Ejercicio ejercicio);
@@ -147,6 +146,9 @@ public class ApiRetrofit {
         @GET("rutinas/obtenerCantDiasRutina")
         Call <List<Integer>> obtenerCantDiasRutina(@Header("Authorization") String token);
 
+        @POST("rutinas/asignarRutina")
+        Call<Rutina_Usuario> asignarRutina(@Header("Authorization") String token,@Body Rutina_Usuario rutina);
+
         @POST("rutinas/nuevoRutina")
         Call<Rutina> nuevaRutina(@Header("Authorization") String token,@Body Rutina rutina);
 
@@ -165,8 +167,18 @@ public class ApiRetrofit {
         @POST("asistencia/NuevaAsistencia")
         Call<Asistencia> nuevaAsistencia(@Header("Authorization") String token);
 
-        @GET("categorias/ObtenerCategoriasDia/{dia}")
-        Call <List<Categoria>> obtenerCategoriasDia (@Header("Authorization") String token,@Path("dia") int dia);
+        @GET("categorias/ObtenerCategoriasDia/{diaaa}")
+        Call <List<Categoria>> obtenerCategoriasDia (@Header("Authorization") String token,@Path("diaaa") int dia);
+
+        @GET("categorias/ObtenerCategoriasDiasRutina/{diaa}/{idd}")
+        Call <List<Categoria>> ObtenerCategoriasDiasRutina (@Header("Authorization") String token,@Path("diaa") int dia,@Path("idd") int id);
+
+        @GET("pagos/GenerarLinkPago")
+        Call <PagoUrl> GenerarLinkPago (@Header("Authorization") String token);
+
+        @GET("pagos/obtenerPagos")
+        Call <List<Pago>> obtenerPagos (@Header("Authorization") String token);
+
 
     }
 }

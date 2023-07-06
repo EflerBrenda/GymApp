@@ -60,6 +60,7 @@ public class RutinasFragment extends Fragment implements SearchView.OnQueryTextL
         rvRutinas =view.findViewById(R.id.rvRutinas);
         btNuevaRutina= view.findViewById(R.id.btNuevaRutina);
         svBuscaRutinas= view.findViewById(R.id.svBuscaRutinas);
+        //aad = new RutinasAdapter(lista,getContext(),getLayoutInflater());
         vm.obtenerRutinas();
         btNuevaRutina.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,7 +78,12 @@ public class RutinasFragment extends Fragment implements SearchView.OnQueryTextL
 
     @Override
     public boolean onQueryTextChange(String s) {
-        aad.buscar(s);
+        if(s!= null){
+            if(aad != null)
+            {
+                aad.buscar(s);
+            }
+        }
         return false;
     }
 }

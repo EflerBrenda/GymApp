@@ -1,4 +1,4 @@
-package com.efler.gymapp.ui.mirutina;
+package com.efler.gymapp.ui.rutinas;
 
 import android.app.Application;
 import android.content.Context;
@@ -13,10 +13,12 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.ViewModel;
 
 import com.efler.gymapp.modelo.Categoria;
 import com.efler.gymapp.modelo.Ejercicio;
 import com.efler.gymapp.modelo.Ejercicio_Rutina;
+import com.efler.gymapp.modelo.Rutina;
 import com.efler.gymapp.request.ApiRetrofit;
 
 import java.util.ArrayList;
@@ -26,15 +28,15 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MiRutinaViewModel extends AndroidViewModel {
+public class DetalleRutinaViewModel extends AndroidViewModel {
 
     private Context context;
     private MutableLiveData<Integer> mutableDia;
     private MutableLiveData<Categoria> mutableCategorias;
-    private MutableLiveData<List<Ejercicio_Rutina>> mutableEjercicioRutina;
+    private MutableLiveData<List<Ejercicio_Rutina>> mutableEjercicio;
 
 
-    public MiRutinaViewModel(@NonNull Application application) {
+    public DetalleRutinaViewModel(@NonNull Application application) {
         super(application);
         this.context = application.getApplicationContext();
     }
@@ -53,57 +55,42 @@ public class MiRutinaViewModel extends AndroidViewModel {
         return mutableCategorias;
     }
 
-    public MutableLiveData<List<Ejercicio_Rutina>> getMutableEjercicioRutina() {
-        if(mutableEjercicioRutina==null){
-            mutableEjercicioRutina=new MutableLiveData<>();
+    public MutableLiveData<List<Ejercicio_Rutina>> getMutableEjercicio() {
+        if(mutableEjercicio==null){
+            mutableEjercicio=new MutableLiveData<>();
         }
-        return mutableEjercicioRutina;
+        return mutableEjercicio;
     }
 
-    public void cargaSpinerDias(Spinner spinner, View view) {
-        String token = ApiRetrofit.obtenerToken(context);
-        Call<List<Integer>> obtenerDiasPromesa = ApiRetrofit.getServiceGym().obtenerCantDiasRutina(token);
-        obtenerDiasPromesa.enqueue(new Callback<List<Integer>>() {
+    public void cargaSpinerDias(Spinner spinner, View view,Integer dias) {
+
+        List<String> descripcionDias=new ArrayList<String>();
+        Integer d=1;
+        for(int i=0; i<dias;i++){
+            descripcionDias.add("Día: "+ (d++));
+        }
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item, descripcionDias);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
+
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onResponse(Call<List<Integer>> call, Response<List<Integer>> response) {
-                if(response.isSuccessful()){
-                    List<Integer> diasResponse= response.body();
-                    List<String> descripcionDias=new ArrayList<String>();
-
-                    for(int i=0; i<diasResponse.size();i++){
-                        descripcionDias.add("Día: "+ diasResponse.get(i));
-                    }
-
-                    ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item, descripcionDias);
-                    adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
-
-                    spinner.setAdapter(adapter);
-                    spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                        @Override
-                        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                            Integer dia= diasResponse.get(position);
-                            Bundle bundle= new Bundle();
-                            bundle.putSerializable("dia",dia);
-                            mutableDia.postValue(dia);
-                        }
-
-                        @Override
-                        public void onNothingSelected(AdapterView<?> parent) {
-                        }
-                    });
-            }}
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Integer dia= Integer.parseInt(descripcionDias.get(position).toString().replace("Día: ",""));
+                Bundle bundle= new Bundle();
+                bundle.putSerializable("dia",dia);
+                mutableDia.postValue(dia);
+            }
 
             @Override
-            public void onFailure(Call<List<Integer>> call, Throwable t) {
-                Log.d("salida", t.getMessage());
-                Toast.makeText(context, "Ocurrio un error en el servidor.", Toast.LENGTH_SHORT).show();
+            public void onNothingSelected(AdapterView<?> parent) {
             }
         });
-
     }
-    public void cargarSpinerCategoria(Spinner spinner, View view, Integer dia){
+    public void cargarSpinerCategoria(Spinner spinner, View view, Integer dia, int id){
         String token = ApiRetrofit.obtenerToken(view.getContext());
-        Call<List<Categoria>> obtenerCategoriaPromesa = ApiRetrofit.getServiceGym().obtenerCategoriasDia(token,dia);
+        Call<List<Categoria>> obtenerCategoriaPromesa = ApiRetrofit.getServiceGym().ObtenerCategoriasDiasRutina(token,dia,id);
         obtenerCategoriaPromesa.enqueue(new Callback<List<Categoria>>() {
             @Override
             public void onResponse(Call<List<Categoria>> call, Response<List<Categoria>> response) {
@@ -149,7 +136,7 @@ public class MiRutinaViewModel extends AndroidViewModel {
             public void onResponse(Call<List<Ejercicio_Rutina>> call, Response<List<Ejercicio_Rutina>> response) {
                 if (response.isSuccessful()) {
                     List<Ejercicio_Rutina>ejercicio_rutinas=response.body();
-                    mutableEjercicioRutina.setValue(ejercicio_rutinas);
+                    mutableEjercicio.setValue(ejercicio_rutinas);
 
                 } else {
                     Toast.makeText(context, "Sin respuesta.", Toast.LENGTH_SHORT).show();
@@ -163,6 +150,36 @@ public class MiRutinaViewModel extends AndroidViewModel {
             }
         });
 
+    }
+
+    public void eliminarRutina(Integer id){
+        String token=ApiRetrofit.obtenerToken(context);
+        Call <Rutina> eliminarPromesa =ApiRetrofit.getServiceGym().bajaRutina(token,id);
+        eliminarPromesa.enqueue(new Callback<Rutina>() {
+            @Override
+            public void onResponse(Call<Rutina> call, Response<Rutina> response) {
+                if(response.isSuccessful()){
+                    Toast.makeText(context, "Se eliminó correctamente.", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Toast.makeText(context, "No hay respuesta.", Toast.LENGTH_SHORT).show();
+                }}
+
+
+            @Override
+            public void onFailure(Call<Rutina> call, Throwable t) {
+                Toast.makeText(context, "Ocurrio un error en el servidor.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+    public int obtenerPosicion(Spinner sp,String valor){
+        for(int i=0;i < sp.getCount();i++){
+            if(sp.getItemAtPosition(i).toString().equalsIgnoreCase(valor)){
+                return i;
+            }
+        }
+        return 0;
     }
 
 }

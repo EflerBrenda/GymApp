@@ -8,9 +8,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,14 +16,9 @@ import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.CheckedTextView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.efler.gymapp.R;
-import com.efler.gymapp.modelo.Categoria;
 import com.efler.gymapp.modelo.Ejercicio;
-import com.efler.gymapp.ui.asistencia.AsistenciaAdapter;
-import com.efler.gymapp.ui.ejercicios.CategoriaTabViewModel;
-import com.efler.gymapp.ui.ejercicios.EjercicioAdapter;
 
 import java.util.List;
 
@@ -54,21 +47,24 @@ public class EjerciciosCategoriaRutinaFragment extends Fragment {
                 lista= ejercicios ;
                 ead = new EjercicioCategoriaRutinaAdapter(getContext(),R.layout.item_ejercicio_check,lista);
                 lvEjerciciosRutina.setAdapter(ead);
+
+
             }
         });
         inicializarVista(view);
         return view;
     }
     public void inicializarVista(View view) {
-        lvEjerciciosRutina= view.findViewById(R.id.lvEjerciciosRutina);
+        lvEjerciciosRutina= view.findViewById(R.id.lvEjerciciosRutinaqqq);
         ctvDescripcionEjercicio = view.findViewById(R.id.ctvDescripcionEjercicio);
-        //lvEjerciciosRutina.setChoiceMode(AbsListView.CHOICE_MODE_MULTIPLE);
+        lvEjerciciosRutina.setChoiceMode(AbsListView.CHOICE_MODE_MULTIPLE);
         lvEjerciciosRutina.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(getContext(), "Checkeado", Toast.LENGTH_SHORT).show();
 
+                //Toast.makeText(getContext(), "Checkeado", Toast.LENGTH_SHORT).show();
             }
+
         });
         Bundle bundle= getArguments();
         Integer categoriaId= bundle.getInt("idCategorias");

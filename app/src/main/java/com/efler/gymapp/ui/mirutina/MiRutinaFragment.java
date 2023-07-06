@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.efler.gymapp.R;
 import com.efler.gymapp.modelo.Categoria;
 import com.efler.gymapp.modelo.Ejercicio;
+import com.efler.gymapp.modelo.Ejercicio_Rutina;
 import com.efler.gymapp.ui.ejercicios.EjercicioAdapter;
 
 import java.util.List;
@@ -27,9 +28,9 @@ public class MiRutinaFragment extends Fragment {
     private View view;
     private Spinner spDiaRutina,spCategoriaEjercicioRutina;
     private RecyclerView rvRutinaEjercicio;
-    private List<Ejercicio> listaEjercicios;
-    private EjercicioAdapter ead;
-    private Integer donde= 2;
+    private List<Ejercicio_Rutina> listaEjercicios;
+    private MiRutinaAdapter ead;
+    private Integer donde=20;
 
 
     @Nullable
@@ -52,13 +53,13 @@ public class MiRutinaFragment extends Fragment {
                 viewModel.obtenerEjerciciosCategoria(categoria.getId());
             }
         });
-        viewModel.getMutableEjercicio().observe(getViewLifecycleOwner(), new Observer<List<Ejercicio>>() {
+        viewModel.getMutableEjercicioRutina().observe(getViewLifecycleOwner(), new Observer<List<Ejercicio_Rutina>>() {
             @Override
-            public void onChanged(List<Ejercicio> ejercicios) {
-                listaEjercicios= ejercicios ;
+            public void onChanged(List<Ejercicio_Rutina> ejerciciosRutina) {
+                listaEjercicios= ejerciciosRutina ;
                 GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 1, GridLayoutManager.VERTICAL, false);
                 rvRutinaEjercicio.setLayoutManager(gridLayoutManager);
-                ead = new EjercicioAdapter(listaEjercicios,getContext(),getLayoutInflater(),donde);
+                ead = new MiRutinaAdapter(listaEjercicios,getContext(),getLayoutInflater(),donde);
                 rvRutinaEjercicio.setAdapter(ead);
             }
         });

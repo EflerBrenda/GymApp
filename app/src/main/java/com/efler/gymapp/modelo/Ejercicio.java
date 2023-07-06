@@ -8,18 +8,18 @@ public class Ejercicio implements Serializable {
     private int categoriaId;
     private Categoria categoria;
     private String explicacion ;
-    private int activo;
+    private Boolean isCheck= false;
 
     public Ejercicio() {
     }
 
-    public Ejercicio(int id, String descripcion, int categoriaId, Categoria categoria, String explicacion, int activo) {
+    public Ejercicio(int id, String descripcion, int categoriaId, Categoria categoria, String explicacion) {
         this.id = id;
         this.descripcion = descripcion;
         this.categoriaId = categoriaId;
         this.categoria = categoria;
         this.explicacion = explicacion;
-        this.activo = activo;
+        //this.isCheck= false;
     }
 
     public int getId() {
@@ -62,11 +62,11 @@ public class Ejercicio implements Serializable {
         this.explicacion = explicacion;
     }
 
-    public int getActivo() {
-        return activo;
+    public Boolean getCheck() {
+        return isCheck;
     }
 
-    public void setActivo(int activo) {
-        this.activo = activo;
+    public void setCheck(Boolean check) {
+        isCheck = check;
     }
 }

@@ -14,6 +14,7 @@
         <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/fragment_administrar_anuncio.xml" value="0.12158054711246201" />
         <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/fragment_alumnos.xml" value="0.19202898550724637" />
         <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/fragment_anuncios.xml" value="0.136" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/fragment_asignar_rutina_alumno.xml" value="0.20471014492753623" />
         <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/fragment_asistencia.xml" value="0.18795289855072464" />
         <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/fragment_cambiar_password.xml" value="0.12158054711246201" />
         <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/fragment_categ_ejer_dias_tab.xml" value="0.20471014492753623" />
@@ -23,6 +24,7 @@
         <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/fragment_detalle_ejercicio.xml" value="0.2" />
         <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/fragment_detalle_ejercicio_rutina.xml" value="0.20471014492753623" />
         <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/fragment_detalle_plan.xml" value="0.18795289855072464" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/fragment_detalle_rutina.xml" value="0.20471014492753623" />
         <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/fragment_dias_tab.xml" value="0.20471014492753623" />
         <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/fragment_ejercicios.xml" value="0.2056159420289855" />
         <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/fragment_ejercicios_categoria_rutina.xml" value="0.2" />
@@ -49,6 +51,7 @@
         <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/item_ejercicio.xml" value="0.2056159420289855" />
         <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/item_ejercicio_check.xml" value="0.20471014492753623" />
         <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/item_ejercicio_rutina.xml" value="0.176" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/item_pago.xml" value="0.20471014492753623" />
         <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/item_plan.xml" value="0.18795289855072464" />
         <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/item_profesor.xml" value="0.24895833333333334" />
         <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/item_rutina.xml" value="0.25" />

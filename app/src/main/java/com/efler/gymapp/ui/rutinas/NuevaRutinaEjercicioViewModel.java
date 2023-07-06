@@ -30,8 +30,8 @@ public class NuevaRutinaEjercicioViewModel extends AndroidViewModel {
 
     private Context context;
     private MutableLiveData<Integer> mutableDia;
-    private MutableLiveData<List<Categoria>> mutableCategorias;
-    //private MutableLiveData<List<Ejercicio>> mutableEjercicio;
+    private MutableLiveData<Categoria> mutableCategoria;
+    private MutableLiveData<List<Ejercicio>> mutableEjercicio;
 
 
     public NuevaRutinaEjercicioViewModel(@NonNull Application application) {
@@ -46,11 +46,17 @@ public class NuevaRutinaEjercicioViewModel extends AndroidViewModel {
         return mutableDia;
     }
 
-    public MutableLiveData<List<Categoria>>getMutableCategorias() {
-        if(mutableCategorias==null){
-            mutableCategorias=new MutableLiveData<>();
+    public MutableLiveData<Categoria>getMutableCategoria() {
+        if(mutableCategoria==null){
+            mutableCategoria=new MutableLiveData<>();
         }
-        return mutableCategorias;
+        return mutableCategoria;
+    }
+    public MutableLiveData<List<Ejercicio>> getMutableEjercicio() {
+        if(mutableEjercicio==null){
+            mutableEjercicio=new MutableLiveData<>();
+        }
+        return mutableEjercicio;
     }
 
     /*public MutableLiveData<List<Ejercicio>> getMutableEjercicio() {
@@ -86,15 +92,57 @@ public class NuevaRutinaEjercicioViewModel extends AndroidViewModel {
             }
         });
     }
-    public void obtenerCategorias() {
-        String token = ApiRetrofit.obtenerToken(context);
+    public void cargarSpinerCategoria(Spinner spinner, View view){
+        String token = ApiRetrofit.obtenerToken(view.getContext());
         Call<List<Categoria>> obtenerCategoriasPromesa = ApiRetrofit.getServiceGym().obtenerCategorias(token);
         obtenerCategoriasPromesa.enqueue(new Callback<List<Categoria>>() {
             @Override
             public void onResponse(Call<List<Categoria>> call, Response<List<Categoria>> response) {
+                if(response.isSuccessful()){
+                    List<Categoria> categoriaResponse= response.body();
+                    List<String> descripcionTipo=new ArrayList<String>();
+
+                    for(int i=0; i<categoriaResponse.size();i++){
+                        descripcionTipo.add(categoriaResponse.get(i).getDescripcion());
+                    }
+
+                    ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item, descripcionTipo);
+                    adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
+
+                    spinner.setAdapter(adapter);
+
+                    spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                        @Override
+                        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                            Categoria ca= new Categoria(categoriaResponse.get(position).getId(),categoriaResponse.get(position).getDescripcion());
+                            Bundle categoria = new Bundle();
+                            categoria.putSerializable("cat",ca);
+                            mutableCategoria.postValue(ca);
+                        }
+
+                        @Override
+                        public void onNothingSelected(AdapterView<?> parent) {
+                        }
+                    });}
+            }
+
+            @Override
+            public void onFailure(Call<List<Categoria>> call, Throwable t) {
+                Toast.makeText(view.getContext(), "Error en el servidor", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+    }
+    public void obtenerEjerciciosCategoria(Integer idCategoria ) {
+        String token = ApiRetrofit.obtenerToken(context);
+        Call<List<Ejercicio>> obtenerEjerciciosCategoriaPromesa = ApiRetrofit.getServiceGym().EjerciciosPorCategorias(token,idCategoria);
+        obtenerEjerciciosCategoriaPromesa.enqueue(new Callback<List<Ejercicio>>() {
+            @Override
+            public void onResponse(Call<List<Ejercicio>> call, Response<List<Ejercicio>> response) {
                 if (response.isSuccessful()) {
-                    List<Categoria> categorias = response.body();
-                    mutableCategorias.setValue(categorias);
+                    List<Ejercicio> ejercicios = response.body();
+                    mutableEjercicio.setValue(ejercicios);
 
                 } else {
                     Toast.makeText(context, "Sin respuesta.", Toast.LENGTH_SHORT).show();
@@ -102,11 +150,12 @@ public class NuevaRutinaEjercicioViewModel extends AndroidViewModel {
             }
 
             @Override
-            public void onFailure(Call<List<Categoria>> call, Throwable t) {
+            public void onFailure(Call<List<Ejercicio>> call, Throwable t) {
                 Log.d("salida", t.getMessage());
                 Toast.makeText(context, "Ocurrio un error en el servidor.", Toast.LENGTH_SHORT).show();
             }
         });
 
     }
+
 }
