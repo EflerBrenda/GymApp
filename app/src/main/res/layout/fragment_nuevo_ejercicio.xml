@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
+        android:background="#E42315"
         android:text="Agregar Ejercicio"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,11 +22,12 @@
 
     <TextView
         android:id="@+id/tve3"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
         android:layout_marginTop="20dp"
-        android:text="Explicación (URL video):"
 
+        android:text="Explicación (URL video):"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,9 +37,9 @@
 
     <TextView
         android:id="@+id/tve2"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="5dp"
         android:layout_marginTop="8dp"
         android:text="Categoría:"
         android:textSize="20sp"
@@ -47,9 +49,9 @@
 
     <TextView
         android:id="@+id/tve1"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="5dp"
         android:layout_marginTop="4dp"
         android:text="Descripcion:"
         android:textSize="20sp"
@@ -61,6 +63,7 @@
         android:id="@+id/tvCategoriaEjercicio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
         android:text="TextView"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -84,6 +87,7 @@
         android:id="@+id/btVistaPreviaExplicación"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#E42315"
         android:text="Vista previa video"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -94,6 +98,7 @@
         android:id="@+id/etURLExplicacion"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_marginStart="5dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"

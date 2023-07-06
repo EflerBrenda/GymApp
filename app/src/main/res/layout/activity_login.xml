@@ -38,6 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="65dp"
         android:layout_marginTop="10dp"
+        android:background="#BA0909"
         android:text="Login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -65,17 +66,19 @@
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="201dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="28dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        />
+        app:srcCompat="@drawable/gym_app" />
 
     <Button
         android:id="@+id/btReestablecerPass"
         android:layout_width="match_parent"
         android:layout_height="65dp"
         android:layout_marginTop="10dp"
+        android:background="#FFC107"
         android:text="Reestablecer contraseña"
         app:layout_constraintTop_toBottomOf="@+id/btLogin"
         tools:ignore="MissingConstraints"

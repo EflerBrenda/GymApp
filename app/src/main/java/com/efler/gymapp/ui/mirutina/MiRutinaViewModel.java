@@ -17,6 +17,8 @@ import androidx.lifecycle.MutableLiveData;
 import com.efler.gymapp.modelo.Categoria;
 import com.efler.gymapp.modelo.Ejercicio;
 import com.efler.gymapp.modelo.Ejercicio_Rutina;
+import com.efler.gymapp.modelo.Rutina;
+import com.efler.gymapp.modelo.Rutina_Usuario;
 import com.efler.gymapp.request.ApiRetrofit;
 
 import java.util.ArrayList;
@@ -32,6 +34,7 @@ public class MiRutinaViewModel extends AndroidViewModel {
     private MutableLiveData<Integer> mutableDia;
     private MutableLiveData<Categoria> mutableCategorias;
     private MutableLiveData<List<Ejercicio_Rutina>> mutableEjercicioRutina;
+    private MutableLiveData<Rutina_Usuario> mutableRutina;
 
 
     public MiRutinaViewModel(@NonNull Application application) {
@@ -58,6 +61,43 @@ public class MiRutinaViewModel extends AndroidViewModel {
             mutableEjercicioRutina=new MutableLiveData<>();
         }
         return mutableEjercicioRutina;
+    }
+
+    public MutableLiveData<Rutina_Usuario> getMutableRutina() {
+        if(mutableRutina==null){
+            mutableRutina=new MutableLiveData<>();
+        }
+        return mutableRutina;
+    }
+
+    public void obtenerMiRutina(){
+        String token = ApiRetrofit.obtenerToken(context);
+        Call<Rutina_Usuario> obtenerPromesa = ApiRetrofit.getServiceGym().obtenerMiRutina(token);
+        obtenerPromesa.enqueue(new Callback<Rutina_Usuario>() {
+            @Override
+            public void onResponse(Call<Rutina_Usuario> call, Response<Rutina_Usuario> response) {
+                if(response.isSuccessful()){
+                    if(response.body() != null){
+                        mutableRutina.postValue(response.body());
+                    }
+                    else{
+                        Rutina_Usuario ru= new Rutina_Usuario();
+                        mutableRutina.postValue(ru);
+                    }
+
+                }
+                else{
+                    Rutina_Usuario ru= new Rutina_Usuario();
+                    mutableRutina.postValue(ru);
+                    Toast.makeText(context, "Sin respuesta", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Rutina_Usuario> call, Throwable t) {
+                Toast.makeText(context, "Ocurrio un error en el servidor.", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     public void cargaSpinerDias(Spinner spinner, View view) {
@@ -101,9 +141,9 @@ public class MiRutinaViewModel extends AndroidViewModel {
         });
 
     }
-    public void cargarSpinerCategoria(Spinner spinner, View view, Integer dia){
+    public void cargarSpinerCategoria(Spinner spinner, View view, Integer dia,Integer id){
         String token = ApiRetrofit.obtenerToken(view.getContext());
-        Call<List<Categoria>> obtenerCategoriaPromesa = ApiRetrofit.getServiceGym().obtenerCategoriasDia(token,dia);
+        Call<List<Categoria>> obtenerCategoriaPromesa = ApiRetrofit.getServiceGym().ObtenerCategoriasDiasRutina(token,dia,id);
         obtenerCategoriaPromesa.enqueue(new Callback<List<Categoria>>() {
             @Override
             public void onResponse(Call<List<Categoria>> call, Response<List<Categoria>> response) {
@@ -141,9 +181,9 @@ public class MiRutinaViewModel extends AndroidViewModel {
             }
         });
     }
-    public void obtenerEjerciciosCategoria(Integer idCategoria ) {
+    public void obtenerEjerciciosCategoria(Integer idCategoria, int idRutina) {
         String token = ApiRetrofit.obtenerToken(context);
-        Call<List<Ejercicio_Rutina>> obtenerEjerciciosCategoriaPromesa = ApiRetrofit.getServiceGym().EjerciciosRutinaPorCategorias(token,idCategoria);
+        Call<List<Ejercicio_Rutina>> obtenerEjerciciosCategoriaPromesa = ApiRetrofit.getServiceGym().EjerciciosRutinaPorCategoriasRutina(token,idCategoria,idRutina);
         obtenerEjerciciosCategoriaPromesa.enqueue(new Callback<List<Ejercicio_Rutina>>() {
             @Override
             public void onResponse(Call<List<Ejercicio_Rutina>> call, Response<List<Ejercicio_Rutina>> response) {

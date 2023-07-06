@@ -66,8 +66,12 @@ public class MainActivity extends AppCompatActivity {
                     navigationView.getMenu().findItem(R.id.nav_planes).setVisible(false);
                     navigationView.getMenu().findItem(R.id.nav_rutinas).setVisible(false);
                 }
-                else{
+                else if(usuario.getRolId() == 2){
                     navigationView.getMenu().findItem(R.id.nav_pago).setVisible(false);
+                    navigationView.getMenu().findItem(R.id.nav_profesores).setVisible(false);
+                    navigationView.getMenu().findItem(R.id.nav_mirutina).setVisible(false);
+                }
+                else if(usuario.getRolId() == 1){
                     navigationView.getMenu().findItem(R.id.nav_mirutina).setVisible(false);
                 }
             }

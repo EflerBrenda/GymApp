@@ -107,6 +107,10 @@ public class ApiRetrofit {
         @GET("Ejercicios/EjerciciosRutinaPorCategorias/{idCategoria}")
         Call <List<Ejercicio_Rutina>> EjerciciosRutinaPorCategorias (@Header("Authorization") String token,@Path("idCategoria") int id);
 
+        @GET("Ejercicios/EjerciciosRutinaPorCategoriasRutina/{Categoriaid}/{RutinaId}")
+        Call <List<Ejercicio_Rutina>> EjerciciosRutinaPorCategoriasRutina (@Header("Authorization") String token,@Path("Categoriaid") int idCategoria,@Path("RutinaId") int idRutina);
+
+
         @POST("Ejercicios/NuevoEjercicio")
         Call<Ejercicio> nuevoEjercicio (@Header("Authorization") String token,@Body Ejercicio ejercicio);
 
@@ -149,11 +153,8 @@ public class ApiRetrofit {
         @POST("rutinas/asignarRutina")
         Call<Rutina_Usuario> asignarRutina(@Header("Authorization") String token,@Body Rutina_Usuario rutina);
 
-        @POST("rutinas/nuevoRutina")
-        Call<Rutina> nuevaRutina(@Header("Authorization") String token,@Body Rutina rutina);
-
-        @PUT("rutinas/EditarRutina")
-        Call<Rutina> editarRutina  (@Header("Authorization") String token,@Body Rutina rutina);
+        @GET("rutinas/obtenerMiRutina")
+        Call<Rutina_Usuario> obtenerMiRutina(@Header("Authorization") String token);
 
         @DELETE("rutinas/BajaRutina/{id}")
         Call<Rutina> bajaRutina  (@Header("Authorization") String token,@Path("id") int id);

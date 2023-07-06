@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,6 +19,8 @@ import com.efler.gymapp.R;
 import com.efler.gymapp.modelo.Categoria;
 import com.efler.gymapp.modelo.Ejercicio;
 import com.efler.gymapp.modelo.Ejercicio_Rutina;
+import com.efler.gymapp.modelo.Rutina;
+import com.efler.gymapp.modelo.Rutina_Usuario;
 import com.efler.gymapp.ui.ejercicios.EjercicioAdapter;
 
 import java.util.List;
@@ -31,6 +34,8 @@ public class MiRutinaFragment extends Fragment {
     private List<Ejercicio_Rutina> listaEjercicios;
     private MiRutinaAdapter ead;
     private Integer donde=20;
+    private TextView tvNombreMiRutina;
+    private Rutina_Usuario rUsuario=new Rutina_Usuario();
 
 
     @Nullable
@@ -44,13 +49,31 @@ public class MiRutinaFragment extends Fragment {
         viewModel.getMutableDia().observe(getViewLifecycleOwner(), new Observer<Integer>() {
             @Override
             public void onChanged(Integer dia) {
-                viewModel.cargarSpinerCategoria(spCategoriaEjercicioRutina,view,dia);
+                if(rUsuario.getId()!=0){
+                    viewModel.cargarSpinerCategoria(spCategoriaEjercicioRutina,view,dia,rUsuario.getRutina().getId());
+
+                }
             }
         });
         viewModel.getMutableCategorias().observe(getViewLifecycleOwner(), new Observer<Categoria>() {
             @Override
             public void onChanged(Categoria categoria) {
-                viewModel.obtenerEjerciciosCategoria(categoria.getId());
+                if(rUsuario.getId()!=0){
+                viewModel.obtenerEjerciciosCategoria(categoria.getId(),rUsuario.getRutina().getId());}
+            }
+        });
+        viewModel.getMutableRutina().observe(getViewLifecycleOwner(), new Observer<Rutina_Usuario>() {
+            @Override
+            public void onChanged(Rutina_Usuario ru) {
+                if(ru.getId()!=0){
+                    rUsuario= ru;
+                    tvNombreMiRutina.setText(ru.getRutina().getDescripcion()+"");
+                }
+                else{
+                    rUsuario= ru;
+                    tvNombreMiRutina.setText("El usuario no posee rutina");
+                }
+
             }
         });
         viewModel.getMutableEjercicioRutina().observe(getViewLifecycleOwner(), new Observer<List<Ejercicio_Rutina>>() {
@@ -72,6 +95,8 @@ public class MiRutinaFragment extends Fragment {
         spDiaRutina= view.findViewById(R.id.spDiaRutina);
         spCategoriaEjercicioRutina= view.findViewById(R.id.spCategoriaEjercicioRutina);
         rvRutinaEjercicio= view.findViewById(R.id.rvRutinaEjercicio);
+        tvNombreMiRutina= view.findViewById(R.id.tvNombreMiRutina);
+        viewModel.obtenerMiRutina();
         //spCategoriaEjercicioRutina.setEnabled(false);
         viewModel.cargaSpinerDias(spDiaRutina,view);
     }

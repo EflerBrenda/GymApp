@@ -11,17 +11,19 @@
         android:id="@+id/spDiaRutina"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="12dp"
+        android:spinnerMode="dialog"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tvNombreMiRutina" />
 
     <Spinner
         android:id="@+id/spCategoriaEjercicioRutina"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
+        android:spinnerMode="dialog"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spDiaRutina" />
 
@@ -33,4 +35,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spCategoriaEjercicioRutina" />
+
+    <TextView
+        android:id="@+id/tvNombreMiRutina"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="rutina"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

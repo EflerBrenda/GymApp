@@ -6,47 +6,47 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_anuncios"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/megafono_24"
             android:title="Anuncios" />
         <item
             android:id="@+id/nav_perfil"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/usuario_24"
             android:title="Perfil" />
         <item
             android:id="@+id/nav_asistencia"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/calendario_24"
             android:title="Asistencia" />
         <item
             android:id="@+id/nav_profesores"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/usuarios_18"
             android:title="Profesores" />
         <item
             android:id="@+id/nav_ejercicios"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/gimnasio_24"
             android:title="Ejercicios" />
         <item
             android:id="@+id/nav_mirutina"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/caja_18"
             android:title="Mi rutina" />
         <item
             android:id="@+id/nav_rutinas"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/caja_18"
             android:title="Rutinas" />
         <item
             android:id="@+id/nav_alumnos"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/usuariosalt_24"
             android:title="Alumnos" />
         <item
             android:id="@+id/nav_planes"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/idinsignia_24"
             android:title="Planes" />
         <item
             android:id="@+id/nav_pago"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/usdcirculo_24_"
             android:title="Pago" />
         <item
             android:id="@+id/nav_logout"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@android:drawable/ic_lock_power_off"
             android:title="Cerrar sesión" />
     </group>
 </menu>

@@ -8,11 +8,12 @@
 
     <TextView
         android:id="@+id/tv3"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
         android:layout_marginTop="20dp"
-        android:text="Fecha anuncio:"
 
+        android:text="Fecha anuncio:"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,32 +23,35 @@
 
     <TextView
         android:id="@+id/tv2"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="76dp"
+        android:layout_marginStart="5dp"
         android:layout_marginTop="20dp"
         android:text="Profesor:"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etDescripcionEditAnuncio" />
 
     <TextView
         android:id="@+id/tv1"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="76dp"
+        android:layout_marginStart="5dp"
         android:layout_marginTop="36dp"
         android:text="Descripcion:"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvProfesorEditAnuncio"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
         android:text="TextView"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,8 +61,9 @@
 
     <TextView
         android:id="@+id/tvFechaEditAnuncio"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
         android:text="TextView"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -75,6 +80,7 @@
         android:layout_marginTop="440dp"
         android:clickable="true"
         android:src="@android:drawable/ic_menu_edit"
+        app:backgroundTint="#FFC107"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.918"
         app:layout_constraintStart_toStartOf="parent"
@@ -87,6 +93,7 @@
         android:layout_marginTop="20dp"
         android:clickable="true"
         android:src="@android:drawable/ic_menu_delete"
+        app:backgroundTint="#F44336"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.918"
@@ -96,13 +103,14 @@
 
     <EditText
         android:id="@+id/etDescripcionEditAnuncio"
-        android:layout_width="298dp"
+        android:layout_width="match_parent"
         android:layout_height="152dp"
         android:background="@null"
         android:enabled="false"
         android:gravity="top|start"
-        android:inputType="textPersonName"
+        android:inputType="textMultiLine|textPersonName"
         android:lines="10"
+        android:maxLines="5"
         android:padding="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.672"

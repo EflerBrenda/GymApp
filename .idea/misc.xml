@@ -3,7 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/drawable/comprobacion-de-la-lista-del-portapapeles_24.xml" value="0.1" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/drawable/comprobacion-de-lista_24.xml" value="0.1375" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/drawable/dolar-de-saco_24.xml" value="0.1" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/drawable/gimnasio_24.xml" value="0.1" />
         <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/drawable/ic_menu_camera.xml" value="0.214" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.1" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/drawable/id-insignia_24.xml" value="0.1" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/drawable/idinsignia_24.xml" value="0.1" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/drawable/usd-circulo_24.xml" value="0.1" />
+        <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/drawable/usuarios-alt_24.xml" value="0.2415" />
         <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/activity_login.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/efler/AndroidStudioProjects/GymApp/app/src/main/res/layout/activity_rutina.xml" value="0.1" />

@@ -8,7 +8,7 @@ tools:context=".ui.ejercicios.DetalleEjercicioFragment">
 
     <TextView
         android:id="@+id/tvee3"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Explicación (URL video):"
 
@@ -21,22 +21,24 @@ tools:context=".ui.ejercicios.DetalleEjercicioFragment">
 
     <TextView
         android:id="@+id/tvee2"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Categoría:"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etDescripcionEjercicioEdit" />
 
     <TextView
         android:id="@+id/tvee1"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:text="Descripcion:"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -52,16 +54,17 @@ tools:context=".ui.ejercicios.DetalleEjercicioFragment">
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvee1" />
 
-<Button
-    android:id="@+id/btVistaPreviaExplicaciónEdit"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Vista previa video"
-    android:enabled="false"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="1.0"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/etURLExplicacionEdit" />
+    <Button
+        android:id="@+id/btVistaPreviaExplicaciónEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#B81D11"
+        android:enabled="false"
+        android:text="Vista previa video"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etURLExplicacionEdit" />
 
     <EditText
         android:id="@+id/etURLExplicacionEdit"
@@ -95,6 +98,7 @@ tools:context=".ui.ejercicios.DetalleEjercicioFragment">
         android:layout_marginTop="200dp"
         android:clickable="true"
         android:src="@android:drawable/ic_menu_edit"
+        app:backgroundTint="#FFC107"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -108,6 +112,7 @@ tools:context=".ui.ejercicios.DetalleEjercicioFragment">
         android:layout_marginEnd="36dp"
         android:clickable="true"
         android:src="@android:drawable/ic_menu_delete"
+        app:backgroundTint="#F44336"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -121,6 +126,7 @@ tools:context=".ui.ejercicios.DetalleEjercicioFragment">
         android:layout_height="48dp"
         android:layout_marginTop="4dp"
 
+        android:spinnerMode="dialog"
         app:layout_constraintTop_toBottomOf="@+id/tvee2"
         tools:layout_editor_absoluteX="1dp" />
 

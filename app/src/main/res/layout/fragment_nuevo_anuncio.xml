@@ -8,11 +8,12 @@
 
     <TextView
         android:id="@+id/tvn3"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
         android:layout_marginTop="20dp"
-        android:text="Fecha anuncio:"
 
+        android:text="Fecha anuncio:"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,9 +23,9 @@
 
     <TextView
         android:id="@+id/tvn2"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="76dp"
+        android:layout_marginStart="5dp"
         android:layout_marginTop="20dp"
         android:text="Profesor:"
         android:textSize="20sp"
@@ -34,9 +35,9 @@
 
     <TextView
         android:id="@+id/tvn1"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="76dp"
+        android:layout_marginStart="5dp"
         android:layout_marginTop="36dp"
         android:text="Descripcion:"
         android:textSize="20sp"
@@ -46,8 +47,9 @@
 
     <TextView
         android:id="@+id/tvProfesorNuevoAnuncio"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
         android:text="TextView"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,8 +59,9 @@
 
     <TextView
         android:id="@+id/tvFechaNuevoAnuncio"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
         android:text="TextView"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -68,13 +71,15 @@
 
     <EditText
         android:id="@+id/etDescripcionNuevoAnuncio"
-        android:layout_width="298dp"
+        android:layout_width="match_parent"
         android:layout_height="152dp"
+        android:layout_marginStart="5dp"
         android:background="@null"
         android:enabled="true"
         android:gravity="top|start"
-        android:inputType="textPersonName"
+        android:inputType="textMultiLine|textPersonName"
         android:lines="10"
+        android:maxLines="5"
         android:padding="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.672"
@@ -85,10 +90,13 @@
         android:id="@+id/btAgregarAnuncio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#D12216"
         android:text="Agregar anuncio"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvFechaNuevoAnuncio" />
+        app:layout_constraintTop_toBottomOf="@+id/tvFechaNuevoAnuncio"
+        app:layout_constraintVertical_bias="0.244" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

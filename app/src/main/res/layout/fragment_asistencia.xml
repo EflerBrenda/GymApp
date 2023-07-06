@@ -20,12 +20,13 @@
         android:id="@+id/btAsistir"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="#C52014"
         android:text="Asistir"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
 
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lvAsistencia"
         app:layout_constraintVertical_bias="0.294" />
 </androidx.constraintlayout.widget.ConstraintLayout>

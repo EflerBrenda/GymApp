@@ -13,6 +13,7 @@
         android:layout_height="50dp"
         android:layout_marginStart="1dp"
         android:layout_marginEnd="1dp"
+        android:spinnerMode="dialog"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
@@ -23,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="92dp"
         android:text="Rutina"
-        android:textSize="20dp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,12 +33,13 @@
     <Button
         android:id="@+id/btAsignarRutina"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:background="#DA0404"
         android:text="Asignar rutina"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spAsignarRutina"
-        app:layout_constraintVertical_bias="0.184" />
+        app:layout_constraintVertical_bias="0.394" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,14 +6,13 @@
     android:layout_height="100dp"
 
     android:layout_margin="3dp"
-    app:cardCornerRadius="80dp"
     app:cardElevation="18dp">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#65B02727">
+        android:background="@color/white">
 
 
         <TextView

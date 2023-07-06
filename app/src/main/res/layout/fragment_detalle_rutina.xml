@@ -14,6 +14,7 @@
         android:layout_marginTop="200dp"
         android:clickable="true"
         android:src="@android:drawable/ic_menu_delete"
+        app:backgroundTint="#F44336"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.878"
@@ -25,9 +26,10 @@
         android:id="@+id/spDiaRutinaDetalle"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="16dp"
+        android:spinnerMode="dialog"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -35,16 +37,31 @@
         android:id="@+id/spCategoriaRutinaDetalle"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="19dp"
+        android:spinnerMode="dialog"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spDiaRutinaDetalle" />
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvRutinaEjercicioDetalle"
-        android:layout_width="415dp"
+        android:layout_width="match_parent"
         android:layout_height="473dp"
+        android:layout_marginTop="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spCategoriaRutinaDetalle" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="Categoría:"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spDiaRutinaDetalle" />
 </androidx.constraintlayout.widget.ConstraintLayout>

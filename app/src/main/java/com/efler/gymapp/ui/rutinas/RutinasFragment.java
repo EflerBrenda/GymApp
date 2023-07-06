@@ -31,7 +31,7 @@ public class RutinasFragment extends Fragment implements SearchView.OnQueryTextL
     private RutinasViewModel vm;
     private RecyclerView rvRutinas;
     private List<Rutina> lista;
-    private ExtendedFloatingActionButton btNuevaRutina;
+    //private ExtendedFloatingActionButton btNuevaRutina;
     private SearchView svBuscaRutinas;
     private View view;
     private RutinasAdapter aad;
@@ -58,17 +58,16 @@ public class RutinasFragment extends Fragment implements SearchView.OnQueryTextL
 
     private void inicializarVista(View view){
         rvRutinas =view.findViewById(R.id.rvRutinas);
-        btNuevaRutina= view.findViewById(R.id.btNuevaRutina);
+        //btNuevaRutina= view.findViewById(R.id.btNuevaRutina);
         svBuscaRutinas= view.findViewById(R.id.svBuscaRutinas);
-        //aad = new RutinasAdapter(lista,getContext(),getLayoutInflater());
         vm.obtenerRutinas();
-        btNuevaRutina.setOnClickListener(new View.OnClickListener() {
+        /*btNuevaRutina.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Navigation.findNavController(view).navigate(R.id.nav_nuevaRutina);
             }
         });
-        svBuscaRutinas.setOnQueryTextListener(this);
+        svBuscaRutinas.setOnQueryTextListener(this);*/
     }
 
     @Override

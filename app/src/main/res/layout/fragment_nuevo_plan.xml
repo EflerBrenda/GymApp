@@ -13,6 +13,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="44dp"
         android:text="Descripcion"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -35,6 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:text="Precio"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -58,6 +60,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:text="Dias por mes"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -80,7 +83,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:background="#D5180B"
         android:text="Agregar plan"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
