@@ -87,9 +87,9 @@ public class DetalleRutinaFragment extends Fragment {
         spDiaRutinaDetalle= view.findViewById(R.id.spDiaRutinaDetalle);
         spCategoriaRutinaDetalle= view.findViewById(R.id.spCategoriaRutinaDetalle);
         rvRutinaEjercicioDetalle= view.findViewById(R.id.rvRutinaEjercicioDetalle);
-        fabBorrarRutina= view.findViewById(R.id.fabBorrarRutina);
+        //fabBorrarRutina= view.findViewById(R.id.fabBorrarRutina);
         viewModel.cargaSpinerDias(spDiaRutinaDetalle,view, rutina.getCant_dias());
-        fabBorrarRutina.setOnClickListener(new View.OnClickListener() {
+        /*fabBorrarRutina.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 new AlertDialog.Builder(view.getContext())
@@ -110,6 +110,6 @@ public class DetalleRutinaFragment extends Fragment {
                             }
                         }).show();
             }
-        });
+        });*/
     }
 }
